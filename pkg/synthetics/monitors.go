@@ -11,19 +11,21 @@ const (
 
 // Monitor represents a New Relic Synthetics monitor.
 type Monitor struct {
-	ID           string            `json:"id,omitempty"`
-	Name         string            `json:"name"`
-	Type         MonitorType       `json:"type"`
-	Frequency    uint              `json:"frequency"`
-	URI          string            `json:"uri"`
-	Locations    []string          `json:"locations"`
-	Status       MonitorStatusType `json:"status"`
-	SLAThreshold float64           `json:"slaThreshold"`
-	UserID       uint              `json:"userId,omitempty"`
-	APIVersion   string            `json:"apiVersion,omitempty"`
-	ModifiedAt   *Time             `json:"modifiedAt,omitempty"`
-	CreatedAt    *Time             `json:"createdAt,omitempty"`
-	Options      MonitorOptions    `json:"options,omitempty"`
+	ID             string                `json:"id,omitempty"`
+	Name           string                `json:"name"`
+	Type           MonitorType           `json:"type"`
+	Frequency      uint                  `json:"frequency"`
+	URI            string                `json:"uri"`
+	Locations      []string              `json:"locations"`
+	Status         MonitorStatusType     `json:"status"`
+	SLAThreshold   float64               `json:"slaThreshold"`
+	UserID         uint                  `json:"userId,omitempty"`
+	APIVersion     string                `json:"apiVersion,omitempty"`
+	ModifiedAt     *Time                 `json:"modifiedAt,omitempty"`
+	CreatedAt      *Time                 `json:"createdAt,omitempty"`
+	Options        MonitorOptions        `json:"options,omitempty"`
+	RuntimeType    MonitorRuntimeType    `json:"runtimeType,omitempty"`
+	RuntimeVersion MonitorRuntimeVersion `json:"runtimeType,omitempty"`
 }
 
 // MonitorScriptLocation represents a New Relic Synthetics monitor script location.
@@ -43,6 +45,12 @@ type MonitorType string
 
 // MonitorStatusType represents a Synthetics monitor status type.
 type MonitorStatusType string
+
+// MonitorRuntimeType represents a Synthetics monitor runtime type.
+type MonitorRuntimeType string
+
+// MonitorRuntimeVersion represents a Synthetics monitor runtime version.
+type MonitorRuntimeVersion string
 
 // MonitorOptions represents the options for a New Relic Synthetics monitor.
 type MonitorOptions struct {
